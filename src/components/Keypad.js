@@ -27,7 +27,9 @@ function Keypad(props) {
                 }
                 break
             case "equalsButton":
-                props.setResult(evaluate(props.currResult).toString())
+                if (!endsWithOperator()) {
+                    props.setResult(evaluate(props.currResult).toString())
+                }
                 break
             case "miscButton":
                 switch(value) {
